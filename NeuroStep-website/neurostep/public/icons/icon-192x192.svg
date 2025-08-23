@@ -1,0 +1,83 @@
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#22d3ee;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a3e635;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f8fafc;stop-opacity:0.9" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="96" cy="96" r="88" fill="url(#bgGradient)" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+  
+  <!-- Neural network pattern -->
+  <g opacity="0.3">
+    <!-- Connection lines -->
+    <line x1="40" y1="60" x2="80" y2="90" stroke="white" stroke-width="1" opacity="0.4"/>
+    <line x1="80" y1="90" x2="120" y2="70" stroke="white" stroke-width="1" opacity="0.4"/>
+    <line x1="120" y1="70" x2="150" y2="100" stroke="white" stroke-width="1" opacity="0.4"/>
+    <line x1="60" y1="120" x2="100" y2="140" stroke="white" stroke-width="1" opacity="0.4"/>
+    <line x1="100" y1="140" x2="140" y2="120" stroke="white" stroke-width="1" opacity="0.4"/>
+    
+    <!-- Neural nodes -->
+    <circle cx="40" cy="60" r="3" fill="white" opacity="0.6"/>
+    <circle cx="80" cy="90" r="3" fill="white" opacity="0.6"/>
+    <circle cx="120" cy="70" r="3" fill="white" opacity="0.6"/>
+    <circle cx="150" cy="100" r="3" fill="white" opacity="0.6"/>
+    <circle cx="60" cy="120" r="3" fill="white" opacity="0.6"/>
+    <circle cx="100" cy="140" r="3" fill="white" opacity="0.6"/>
+    <circle cx="140" cy="120" r="3" fill="white" opacity="0.6"/>
+  </g>
+  
+  <!-- Main brain icon -->
+  <g transform="translate(96, 96)" filter="url(#glow)">
+    <!-- Brain outline -->
+    <path d="M-20,-25 C-25,-30 -30,-25 -30,-15 C-30,-5 -25,0 -20,5 C-15,10 -10,15 0,15 C10,15 15,10 20,5 C25,0 30,-5 30,-15 C30,-25 25,-30 20,-25 C15,-30 10,-28 5,-25 C0,-28 -5,-30 -10,-28 C-15,-30 -20,-25 -20,-25 Z" 
+          fill="url(#iconGradient)" 
+          stroke="rgba(255,255,255,0.3)" 
+          stroke-width="1"/>
+    
+    <!-- Brain details -->
+    <path d="M-15,-15 C-10,-20 -5,-18 0,-15 C5,-18 10,-20 15,-15" 
+          fill="none" 
+          stroke="rgba(124,58,237,0.6)" 
+          stroke-width="2" 
+          stroke-linecap="round"/>
+    <path d="M-15,-5 C-10,-10 -5,-8 0,-5 C5,-8 10,-10 15,-5" 
+          fill="none" 
+          stroke="rgba(124,58,237,0.6)" 
+          stroke-width="2" 
+          stroke-linecap="round"/>
+    <path d="M-15,5 C-10,0 -5,2 0,5 C5,2 10,0 15,5" 
+          fill="none" 
+          stroke="rgba(124,58,237,0.6)" 
+          stroke-width="2" 
+          stroke-linecap="round"/>
+  </g>
+  
+  <!-- Gait analysis elements -->
+  <g opacity="0.8">
+    <!-- Footstep indicators -->
+    <ellipse cx="70" cy="150" rx="8" ry="4" fill="white" opacity="0.7" transform="rotate(-15 70 150)"/>
+    <ellipse cx="90" cy="155" rx="8" ry="4" fill="white" opacity="0.5" transform="rotate(-10 90 155)"/>
+    <ellipse cx="110" cy="150" rx="8" ry="4" fill="white" opacity="0.7" transform="rotate(-5 110 150)"/>
+    <ellipse cx="130" cy="155" rx="8" ry="4" fill="white" opacity="0.5" transform="rotate(0 130 155)"/>
+  </g>
+  
+  <!-- Brand text -->
+  <text x="96" y="175" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold" opacity="0.9">
+    NEUROSTEP
+  </text>
+</svg>
