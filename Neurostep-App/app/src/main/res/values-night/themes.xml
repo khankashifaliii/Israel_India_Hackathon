@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PoseExercise" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <item name="colorPrimary">@color/lightBlue</item>
+        <item name="colorPrimaryVariant">@color/darkBlue</item>
+        <item name="colorSecondary">@color/lightGreen</item>
+        <item name="colorSecondaryVariant">@color/green</item>
+    </style>
+</resources>
