@@ -1,61 +1,136 @@
-🧠 NeuroStep – AI Gait & Movement Analysis Platform
-Revolutionizing fitness & healthcare with AI-powered pose detection, gait analysis, and wearable hardware integration.
+🧠 NeuroStep: AI-Powered Gait & Exercise Analysis Platform
 
-1. 📱 Android App – Neurostep (PoseExercise)
-A cutting-edge AI Fitness Trainer App that uses Google ML Kit + TensorFlow + MediaPipe to deliver real-time exercise form correction, rep counting, and workout planning.
+NeuroStep is a comprehensive system that combines mobile AI (Android app), a web-based gait analysis platform, and wearable IMU sensor hardware to deliver advanced movement and posture analysis.
+It empowers fitness enthusiasts, healthcare professionals, and researchers by transforming raw motion data into actionable insights.
 
-⚡ Key Features
--33-Point Pose Detection 
--Exercise Recognition: Lunge, Squat, Push-up, Sit-up, Chest Press, Dead Lift, Shoulder Press
--Smart Rep Counting (counts only valid reps with form validation)
--Instant Feedback (visual & audio cues for motivation + safety)
--Workout Plans & Tracking with calorie calculation and progression
+1. 📱 Neurostep-App: AI Fitness & Pose Correction
+Neurostep-App (internally named PoseExercise) is an advanced Android fitness application that leverages computer vision + AI to provide real-time exercise form correction and personal workout guidance. The app turns your smartphone into a personal AI trainer.
 
-🏗 Tech Stack
--Language: Kotlin + Java
--Architecture: MVVM
--AI Models: TensorFlow + MediaPipe
+⚙️ Core Architecture & Technology Stack
+AI & ML Foundation
+Google ML Kit Pose Detection – Tracks 33 body landmarks in real time.
+TensorFlow Lite Models – Custom models for exercise classification.
+MediaPipe Framework – High-accuracy pose estimation pipeline.
+Real-Time Processing – 30+ FPS camera stream analysis.
+Technical Implementation
+Language: Kotlin + Java
+Architecture: MVVM (Model-View-ViewModel)
+Camera: CameraX API
+UI: Jetpack Navigation + Data Binding
+Database: Room (workout history & plans)
 
-2. 🌐 Web Platform – NeuroStep Dashboard
-A Next.js + FastAPI powered gait analysis platform for doctors, researchers, and fitness professionals.
+💪 Key Features
+1. Intelligent Pose Detection
+33-point body tracking
+Real-time form validation
+Confidence scoring per joint
+Posture correction alerts
 
-🎯 Features
--Comprehensive Dashboard (stats, progress, recent sessions)
--Session Analysis Portal (Squats, Push-ups, gait tracking)
--Advanced Gait Analysis with LT-StrideNet Model
--Step length, cadence, symmetry
--Joint kinematics & posture
--Balance & stability assessment
--AI Chatbot powered by LLM which is heavily guardrailed and is only specific to the GAIT Analysis.
--PWA Support (installable app + offline mode)
+2. Exercise Recognition & Classification
+Supports 7 core exercises:
+Beginner: Lunge, Squat
+Intermediate: Push-up
+Advanced: Sit-up, Chest Press, Deadlift, Shoulder Press
 
-🏗 Tech Stack
--Frontend: Next.js 15.5, TypeScript, Tailwind, Shadcn, Zustand
--Backend: FastAPI, Torch, Pandas, NumPy
--Multiple Ensemble of Deep Learning Models
--Auth: Firebase Auth
--Charts: Recharts
+3. Smart Repetition Counting
+Detects phases (eccentric & concentric)
+Counts only correct reps
+Visual & audio feedback
 
-3. ⚙️ Hardware – IMU-Based Wearable for Gait & Fall Detection
-We built a hardware prototype using multiple MPU6050 IMU sensors and Arduino Uno to track movement dynamics and detect anomalies in gait.
+4. Workout Planning & Management
+Custom workout plans
+Adaptive difficulty levels
+Calorie burn estimation
+Progress analytics
 
-🔩 Setup
-3 IMUs:
--1 on the back (trunk orientation & posture)
--2 on ankles (step detection, stride length, symmetry)
--MCU: Arduino Uno (collects sensor data)
+🔬 Pose Classification Pipeline
+Image Capture → CameraX captures frames.
+Pose Detection → ML Kit extracts landmarks.
+Feature Extraction → PoseEmbedding.java.Classification → PoseClassifier.java.
+Noise Reduction → EMASmoothing.java.
 
-Data Flow:
--Collect raw acceleration + gyroscope data
--Compute net acceleration, pitch/roll angles
--Apply decision thresholds (fall / no fall, gait irregularity)
--Send to Web Dashboard via serial → API
+🌟 Unique Value Proposition
+✅ Real-time AI form correction (prevents injuries).
+✅ AI trainer on your phone, 24/7.
+✅ No equipment required → bodyweight exercises only.
+✅ Privacy-first → All processing is on-device.
 
-🔗 Why 3 IMUs?
--2 IMUs only (ankles) → step detection works, but trunk posture & fall detection accuracy is lost.
--3 IMUs (ankles + back) → captures both gait mechanics + fall dynamics and provides a reference for measurment of the two IMU Sensors on the leg.
+🌐 NeuroStep Web Platform: AI Gait Analysis
+🔎 Overview
+The NeuroStep Web App provides a comprehensive gait analysis platform for clinicians, trainers, and researchers. Built with Next.js (frontend) and FastAPI (backend), it integrates AI-powered models for biomechanical assessment.
 
-🛠 Hardware Integration Notes
--Single Arduino Uno can handle multiple IMUs (I²C bus with different addresses or multiplexing).
--No need for multiple MCUs – just careful wiring.
--Wiring: Use jumper wires with soldered connectors (not breadboard for final prototype). Use I²C extensions and secure enclosures for stability.
+🎯 Key Features
+📊 Dashboard
+Real-time session statistics
+Progress tracking & visualization
+Quick access to history
+
+🏃 Session Analysis
+Pose-based rep counting
+Squats, push-ups, custom movements
+Multi-format support (CSV, video, TXT)
+Form quality evaluation
+
+🔬 Advanced Gait Analysis
+LT-StrideNet AI Model → Deep gait analysis
+Step length, cadence, symmetry indices
+Posture & balance metrics
+Temporal gait cycle analysis
+
+🤖 Chatbot Integration
+Gemini AI for contextual gait insights
+Movement quality Q&A
+Personalized recommendations
+
+🏗 Technical Architecture
+Frontend
+Next.js 15.5 (Turbopack)
+TypeScript + Tailwind + Shadcn/ui
+Zustand state management
+Firebase Auth for authentication
+Recharts for data visualization
+
+Backend
+FastAPI + Uvicorn
+Torch (StrideNet model)
+Pandas, NumPy for processing
+WebSocket for real-time streaming
+
+
+3. ⚡ IMU Hardware System
+To complement AI vision-based analysis, NeuroStep integrates IMU sensors (MPU6050) connected to an Arduino Uno for real-time motion tracking.
+
+Placement:
+1 IMU on the back → Posture & balance.
+2 IMUs on the ankles → Step detection & gait symmetry.
+
+⚙️ Integration with Arduino
+Communication via I²C bus (SDA, SCL).
+Arduino Uno reads IMU data (acceleration + gyro).
+Data transmitted to PC/mobile for visualization.
+Multiple IMUs integrated by assigning unique addresses.
+
+📊 Applications
+Healthcare rehab (stroke, Parkinson’s patients).
+Fall detection & balance monitoring.
+Sports biomechanics analysis.
+Ergonomic posture correction.
+
+🎯 Why NeuroStep Stands Out
+
+Combines 3 pillars:
+📱 AI-powered mobile fitness app
+🌐 Web gait analysis dashboard
+⚡ Wearable IMU hardware system
+
+End-to-end ecosystem: From data capture → AI analysis → actionable insights.
+
+Designed for fitness, rehab, and research.
+
+👨‍💻 Contributors
+Team NeuroStep (Hackathon PS-6)
+
+Roles:
+Mobile App → AI Pose Detection & Training (Kotlin)
+Web App → Gait Analysis Dashboard (Next.js + FastAPI)
+Hardware → IMU Sensor Integration (Arduino Uno)
