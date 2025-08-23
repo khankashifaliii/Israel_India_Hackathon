@@ -2,7 +2,7 @@
 
 🚀 Revolutionizing fitness & healthcare with AI-powered pose detection, gait analysis, and wearable hardware integration.
 
-📱 Android App – Neurostep (PoseExercise)
+1. 📱 Android App – Neurostep (PoseExercise)
 
 A cutting-edge AI Fitness Trainer App that uses Google ML Kit + TensorFlow + MediaPipe to deliver real-time exercise form correction, rep counting, and workout planning.
 
@@ -30,7 +30,7 @@ Database: Room DB
 
 AI Models: TensorFlow + MediaPipe
 
-🌐 Web Platform – NeuroStep Dashboard
+2. 🌐 Web Platform – NeuroStep Dashboard
 
 A Next.js + FastAPI powered gait analysis platform for doctors, researchers, and fitness professionals.
 
@@ -64,7 +64,7 @@ Auth: Firebase Auth
 
 Charts: Recharts
 
-⚙️ Hardware – IMU-Based Wearable for Gait & Fall Detection
+3. ⚙️ Hardware – IMU-Based Wearable for Gait & Fall Detection
 
 We built a hardware prototype using multiple MPU6050 IMU sensors and Arduino Uno to track movement dynamics and detect anomalies in gait.
 
