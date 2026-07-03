@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
-const API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY || 'AIzaSyD7j987iU66_i10iGFbya5f29OODd4oN6Q';
+
 
 if (!API_KEY) {
   throw new Error('Gemini API key is required');
